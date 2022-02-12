@@ -32,6 +32,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'firstApp',
     'fbvApp',
+    'cbvApp',
 ]
 
 MIDDLEWARE = [

@@ -24,7 +24,7 @@ def student_list(request):
 def student_detail(request, pk):
     try:
         student = Student.objects.get(pk=pk)
-    except:
+    except Student.DoesNotExist:
         return Response(status=status.HTTP_404_NOT_FOUND)
     
     if request.method == 'GET':
