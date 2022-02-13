@@ -7,26 +7,11 @@ from fbvApp.models import Student
 from fbvApp.serializers import StudentSerializer
 
 
-class StudentList(mixins.ListModelMixin, mixins.CreateModelMixin, generics.GenericAPIView):
+class StudentList(generics.ListCreateAPIView):
     queryset = Student.objects.all()
     serializer_class = StudentSerializer
 
-    def get(self, request):
-        return self.list(request)
 
-    def post(self, request):
-        return self.create(request)
-
-
-class StudentDetail(mixins.RetrieveModelMixin, mixins.UpdateModelMixin, mixins.DestroyModelMixin, generics.GenericAPIView):
+class StudentDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = Student.objects.all()
     serializer_class = StudentSerializer
-
-    def get(self, request, pk):
-        return self.retrieve(request, pk)
-    
-    def put(self, request, pk):
-        return self.update(request, pk)
-    
-    def delete(self, request, pk):
-        return self.destroy(request, pk)
