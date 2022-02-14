@@ -6,4 +6,5 @@ urlpatterns = [
     path('firstApp/', include('firstApp.urls')),
     path('fbvApp/', include('fbvApp.urls')),
     path('cbvApp/', include('cbvApp.urls')),
+    path('nsApp/', include('nsApp.urls')),
 ]

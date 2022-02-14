@@ -33,6 +33,7 @@ INSTALLED_APPS = [
     'firstApp',
     'fbvApp',
     'cbvApp',
+    'nsApp',
 ]
 
 MIDDLEWARE = [
