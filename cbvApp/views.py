@@ -3,14 +3,15 @@ from rest_framework import status
 from rest_framework.views import APIView
 from rest_framework import generics, mixins
 from rest_framework import viewsets
-from rest_framework.pagination import PageNumberPagination, LimitOffsetPagination
+from rest_framework.pagination import PageNumberPagination, LimitOffsetPagination, CursorPagination
 
 from fbvApp.models import Student
 from fbvApp.serializers import StudentSerializer
 
 
-class StudentPagination(LimitOffsetPagination):
-    default_limit = 4
+class StudentPagination(CursorPagination):
+    page_size = 3
+    ordering = 'id'
 
 class StudentViewSet(viewsets.ModelViewSet):
     
